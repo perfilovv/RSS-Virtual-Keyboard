@@ -47,6 +47,22 @@ window.onload = () => {
     ['bracketLeft', '[', '{', 'х', 'Х'],
     ['bracketRight', ']', '}', 'ъ', 'Ъ'],
     ['delete', 'delete', 'delete', 'delete', 'delete']];
+  const thirdRow = [
+    ['capslock', 'capslock', 'capslock', 'capslock', 'capslock'],
+    ['keyA', 'a', 'A', 'ф', 'Ф'],
+    ['keyS', 's', 'S', 'ы', 'Ы'],
+    ['keyD', 'd', 'D', 'в', 'В'],
+    ['keyF', 'f', 'F', 'а', 'А'],
+    ['keyG', 'g', 'G', 'п', 'П'],
+    ['keyH', 'h', 'H', 'р', 'Р'],
+    ['keyJ', 'j', 'J', 'о', 'О'],
+    ['keyK', 'k', 'K', 'л', 'Л'],
+    ['keyL', 'l', 'L', 'д', 'Д'],
+    ['semicolon', ';', ':', 'ж', 'Ж'],
+    ['quote', '\'', '"', 'э', 'Э'],
+    ['backslash', '\\', '|', '\\', '/'],
+    ['enter', 'enter', 'enter', 'enter', 'enter'],
+  ];
   const row = [];
   for (let i = 0; i < 5; i += 1) {
     row[i] = document.createElement('div');
@@ -57,6 +73,7 @@ window.onload = () => {
   }
   const firstRowKeys = [];
   const secondRowKeys = [];
+  const thirdRowKeys = [];
 
   class Key {
     constructor(name, enSpan, enShiftSpan, ruSpan, ruShiftSpan, parent) {
@@ -113,6 +130,7 @@ window.onload = () => {
     );
     firstRowKeys[i].createKey();
   }
+  // Второй ряд
   for (let i = 0; i < secondRow.length; i += 1) {
     secondRowKeys[i] = new Key(
       secondRow[i][0],
@@ -123,5 +141,17 @@ window.onload = () => {
       row[1],
     );
     secondRowKeys[i].createKey();
+  }
+  // Третий ряд
+  for (let i = 0; i < thirdRow.length; i += 1) {
+    thirdRowKeys[i] = new Key(
+      thirdRow[i][0],
+      thirdRow[i][1],
+      thirdRow[i][2],
+      thirdRow[i][3],
+      thirdRow[i][4],
+      row[2],
+    );
+    thirdRowKeys[i].createKey();
   }
 };
