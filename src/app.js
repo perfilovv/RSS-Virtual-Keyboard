@@ -63,6 +63,19 @@ window.onload = () => {
     ['backslash', '\\', '|', '\\', '/'],
     ['enter', 'enter', 'enter', 'enter', 'enter'],
   ];
+  const fourthRow = [
+    ['shiftLeft', 'shift', 'shift', 'shift', 'shift'],
+    ['keyZ', 'z', 'Z', 'я', 'Я'],
+    ['keyX', 'x', 'X', 'ч', 'Ч'],
+    ['keyC', 'c', 'C', 'с', 'С'],
+    ['keyV', 'v', 'V', 'м', 'М'],
+    ['keyB', 'b', 'B', 'и', 'И'],
+    ['keyN', 'n', 'N', 'т', 'Т'],
+    ['keyM', 'm', 'M', 'ь', 'Ь'],
+    ['comma', ',', '<', 'б', 'Б'],
+    ['period', '.', '>', 'ю', 'Ю'],
+    ['slash', '/', '?', '.', ','],
+    ['shiftRight', 'shift', 'shift', 'shift', 'shift']];
   const row = [];
   for (let i = 0; i < 5; i += 1) {
     row[i] = document.createElement('div');
@@ -74,6 +87,7 @@ window.onload = () => {
   const firstRowKeys = [];
   const secondRowKeys = [];
   const thirdRowKeys = [];
+  const fourthRowKeys = [];
 
   class Key {
     constructor(name, enSpan, enShiftSpan, ruSpan, ruShiftSpan, parent) {
@@ -153,5 +167,17 @@ window.onload = () => {
       row[2],
     );
     thirdRowKeys[i].createKey();
+  }
+  // Четвертый ряд
+  for (let i = 0; i < fourthRow.length; i += 1) {
+    fourthRowKeys[i] = new Key(
+      fourthRow[i][0],
+      fourthRow[i][1],
+      fourthRow[i][2],
+      fourthRow[i][3],
+      fourthRow[i][4],
+      row[3],
+    );
+    fourthRowKeys[i].createKey();
   }
 };
