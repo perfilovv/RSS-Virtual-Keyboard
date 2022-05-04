@@ -17,7 +17,21 @@ window.onload = () => {
   keyboard.className = 'keyboard';
   keyboard.style.display = 'flex';
   document.body.append(keyboard);
-  const firstRow = [['backquote', '`', '~', 'ё', 'Ё']];
+  const firstRow = [
+    ['backquote', '`', '~', 'ё', 'Ё'],
+    ['digit1', '1', '!', '1', '!'],
+    ['digit2', '2', '@', '2', '"'],
+    ['digit3', '3', '#', '3', '№'],
+    ['digit4', '4', '$', '4', ';'],
+    ['digit5', '5', '%', '5', '%'],
+    ['digit6', '6', '^', '6', ':'],
+    ['digit7', '7', '&', '7', '?'],
+    ['digit8', '8', '*', '8', '*'],
+    ['digit9', '9', '(', '9', '('],
+    ['digit0', '0', ')', '0', ')'],
+    ['minus', '-', '_', '-', '_'],
+    ['equals', '=', '', '0', ')'],
+    ['backspace', 'backspace', 'backspace', 'backspace', 'backspace']];
   const row = [];
   for (let i = 0; i < 5; i += 1) {
     row[i] = document.createElement('div');
