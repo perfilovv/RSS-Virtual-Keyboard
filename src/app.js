@@ -75,12 +75,17 @@ window.onload = () => {
     ['comma', ',', '<', 'б', 'Б'],
     ['period', '.', '>', 'ю', 'Ю'],
     ['slash', '/', '?', '.', ','],
+    ['arrowUp', '↑', '↑', '↑', '↑'],
     ['shiftRight', 'shift', 'shift', 'shift', 'shift']];
   const fifthRow = [
     ['ctrlLeft', 'ctrl', 'ctrl', 'ctrl', 'ctrl'],
+    ['metaLeft', 'win', 'win', 'win', 'win'],
     ['altLeft', 'alt', 'alt', 'alt', 'alt'],
     ['space', ' ', ' ', ' ', ' '],
     ['altRight', 'alt', 'alt', 'alt', 'alt'],
+    ['arrowLeft', '←', '←', '←', '←'],
+    ['arrowDown', '↓', '↓', '↓', '↓'],
+    ['arrowRight', '→', '→', '→', '→'],
     ['ctrlRight', 'ctrl', 'ctrl', 'ctrl', 'ctrl']];
   const row = [];
   for (let i = 0; i < 5; i += 1) {
@@ -151,6 +156,8 @@ window.onload = () => {
     );
     firstRowKeys[i].createKey();
   }
+  firstRowKeys[firstRow.length - 1].div.style.width = '110px';
+  firstRowKeys[firstRow.length - 1].div.style.fontSize = '16px';
   // Второй ряд
   for (let i = 0; i < secondRow.length; i += 1) {
     secondRowKeys[i] = new Key(
@@ -163,6 +170,10 @@ window.onload = () => {
     );
     secondRowKeys[i].createKey();
   }
+  secondRowKeys[0].div.style.width = '65px';
+  secondRowKeys[0].div.style.fontSize = '16px';
+  secondRowKeys[secondRow.length - 1].div.style.width = '95px';
+  secondRowKeys[secondRow.length - 1].div.style.fontSize = '16px';
   // Третий ряд
   for (let i = 0; i < thirdRow.length; i += 1) {
     thirdRowKeys[i] = new Key(
@@ -175,6 +186,10 @@ window.onload = () => {
     );
     thirdRowKeys[i].createKey();
   }
+  thirdRowKeys[0].div.style.width = '80px';
+  thirdRowKeys[0].div.style.fontSize = '16px';
+  thirdRowKeys[thirdRow.length - 1].div.style.width = '80px';
+  thirdRowKeys[thirdRow.length - 1].div.style.fontSize = '16px';
   // Четвертый ряд
   for (let i = 0; i < fourthRow.length; i += 1) {
     fourthRowKeys[i] = new Key(
@@ -187,6 +202,10 @@ window.onload = () => {
     );
     fourthRowKeys[i].createKey();
   }
+  fourthRowKeys[0].div.style.width = '95px';
+  fourthRowKeys[0].div.style.fontSize = '16px';
+  fourthRowKeys[fourthRow.length - 1].div.style.width = '119px';
+  fourthRowKeys[fourthRow.length - 1].div.style.fontSize = '16px';
   // Пятый ряд
   for (let i = 0; i < fifthRow.length; i += 1) {
     fifthRowKeys[i] = new Key(
@@ -199,4 +218,7 @@ window.onload = () => {
     );
     fifthRowKeys[i].createKey();
   }
+  fifthRowKeys[0].div.style.width = '65px';
+  fifthRowKeys[3].div.style.width = '350px';
+  fifthRowKeys[fifthRow.length - 1].div.style.width = '65px';
 };
