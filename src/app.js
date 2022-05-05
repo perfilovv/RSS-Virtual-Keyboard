@@ -76,6 +76,12 @@ window.onload = () => {
     ['period', '.', '>', 'ю', 'Ю'],
     ['slash', '/', '?', '.', ','],
     ['shiftRight', 'shift', 'shift', 'shift', 'shift']];
+  const fifthRow = [
+    ['ctrlLeft', 'ctrl', 'ctrl', 'ctrl', 'ctrl'],
+    ['altLeft', 'alt', 'alt', 'alt', 'alt'],
+    ['space', ' ', ' ', ' ', ' '],
+    ['altRight', 'alt', 'alt', 'alt', 'alt'],
+    ['ctrlRight', 'ctrl', 'ctrl', 'ctrl', 'ctrl']];
   const row = [];
   for (let i = 0; i < 5; i += 1) {
     row[i] = document.createElement('div');
@@ -88,6 +94,7 @@ window.onload = () => {
   const secondRowKeys = [];
   const thirdRowKeys = [];
   const fourthRowKeys = [];
+  const fifthRowKeys = [];
 
   class Key {
     constructor(name, enSpan, enShiftSpan, ruSpan, ruShiftSpan, parent) {
@@ -179,5 +186,17 @@ window.onload = () => {
       row[3],
     );
     fourthRowKeys[i].createKey();
+  }
+  // Пятый ряд
+  for (let i = 0; i < fifthRow.length; i += 1) {
+    fifthRowKeys[i] = new Key(
+      fifthRow[i][0],
+      fifthRow[i][1],
+      fifthRow[i][2],
+      fifthRow[i][3],
+      fifthRow[i][4],
+      row[4],
+    );
+    fifthRowKeys[i].createKey();
   }
 };
