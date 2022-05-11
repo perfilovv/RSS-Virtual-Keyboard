@@ -277,15 +277,17 @@ window.onload = () => {
       if (e.code === x.name) {
         if (e.code === 'CapsLock') {
           if (!capsOn) {
-            x.div.style.background = '#6e69b47c';
-            x.div.style.transform = 'scale(0.9)';
+            const fnx = x;
+            fnx.div.style.background = '#6e69b47c';
+            fnx.div.style.transform = 'scale(0.9)';
             capsOn = true;
             for (let i = 13; i < allRowKeys.length; i += 1) {
               allRowKeys[i].switchCase();
             }
           } else if (capsOn) {
-            x.div.style.background = '#1100ff7c';
-            x.div.style.transform = 'scale(1)';
+            const fnx = x;
+            fnx.div.style.background = '#1100ff7c';
+            fnx.div.style.transform = 'scale(1)';
             capsOn = false;
             for (let i = 13; i < allRowKeys.length; i += 1) {
               allRowKeys[i].switchCase();
@@ -293,8 +295,9 @@ window.onload = () => {
           }
           return;
         }
-        x.div.style.background = '#6e69b47c';
-        x.div.style.transform = 'scale(0.9)';
+        const fnx = x;
+        fnx.div.style.background = '#6e69b47c';
+        fnx.div.style.transform = 'scale(0.9)';
         if ((e.altKey) && (e.shiftKey)) {
           allRowKeys.forEach((y) => {
             y.switchLanguage();
@@ -333,8 +336,9 @@ window.onload = () => {
     allRowKeys.forEach((x) => {
       if (e.code === x.name) {
         if (e.code !== 'CapsLock') {
-          x.div.style.background = '#1100ff7c';
-          x.div.style.transform = 'scale(1)';
+          const fnx = x;
+          fnx.div.style.background = '#1100ff7c';
+          fnx.div.style.transform = 'scale(1)';
           if ((e.code === 'ShiftLeft') || (e.code === 'ShiftRight')) {
             shiftDown = false;
             allRowKeys.forEach((y) => {
