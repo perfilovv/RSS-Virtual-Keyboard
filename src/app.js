@@ -16,7 +16,11 @@ window.onload = () => {
   const keyboard = document.createElement('div');
   keyboard.className = 'keyboard';
   keyboard.style.display = 'flex';
+  keyboard.style.margin = '0 auto';
+  keyboard.style.fontSize = '20px';
   document.body.append(keyboard);
+  keyboard.innerHTML = `<p>Клавиатура создана в операционной системе <strong>Windows</strong>,<br>
+    комбинация для переключения языка: левыe <strong>SHIFT + ALT.</strong></p>`;
   const firstRow = [
     ['Backquote', '`', '~', 'ё', 'Ё'],
     ['Digit1', '1', '!', '1', '!'],
