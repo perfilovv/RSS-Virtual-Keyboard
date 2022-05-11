@@ -1,8 +1,8 @@
 window.onload = () => {
-  if (window.localStorage.getItem('language') === null) {
-    window.localStorage.setItem('language', 'en');
+  if (localStorage.getItem('language') === null) {
+    localStorage.setItem('language', 'en');
   }
-  const lang = window.localStorage.getItem('language');
+  let lang = localStorage.getItem('language');
   document.querySelector('body').style.display = 'flex';
   document.querySelector('body').style.flexDirection = 'column';
   document.querySelector('body').style.justifyContent = 'center';
@@ -18,75 +18,75 @@ window.onload = () => {
   keyboard.style.display = 'flex';
   document.body.append(keyboard);
   const firstRow = [
-    ['backquote', '`', '~', 'ё', 'Ё'],
-    ['digit1', '1', '!', '1', '!'],
-    ['digit2', '2', '@', '2', '"'],
-    ['digit3', '3', '#', '3', '№'],
-    ['digit4', '4', '$', '4', ';'],
-    ['digit5', '5', '%', '5', '%'],
-    ['digit6', '6', '^', '6', ':'],
-    ['digit7', '7', '&', '7', '?'],
-    ['digit8', '8', '*', '8', '*'],
-    ['digit9', '9', '(', '9', '('],
-    ['digit0', '0', ')', '0', ')'],
-    ['minus', '-', '_', '-', '_'],
-    ['equals', '=', '', '0', ')'],
-    ['backspace', 'backspace', 'backspace', 'backspace', 'backspace']];
+    ['Backquote', '`', '~', 'ё', 'Ё'],
+    ['Digit1', '1', '!', '1', '!'],
+    ['Digit2', '2', '@', '2', '"'],
+    ['Digit3', '3', '#', '3', '№'],
+    ['Digit4', '4', '$', '4', ';'],
+    ['Digit5', '5', '%', '5', '%'],
+    ['Digit6', '6', '^', '6', ':'],
+    ['Digit7', '7', '&', '7', '?'],
+    ['Digit8', '8', '*', '8', '*'],
+    ['Digit9', '9', '(', '9', '('],
+    ['Digit0', '0', ')', '0', ')'],
+    ['Minus', '-', '_', '-', '_'],
+    ['Equal', '=', '', '0', ')'],
+    ['Backspace', 'Backspace', 'Backspace', 'Backspace', 'Backspace']];
   const secondRow = [
-    ['tab', 'tab', 'tab', 'tab', 'tab'],
-    ['keyQ', 'q', 'Q', 'й', 'Й'],
-    ['keyW', 'w', 'W', 'ц', 'Ц'],
-    ['keyE', 'e', 'E', 'у', 'У'],
-    ['keyR', 'r', 'R', 'к', 'К'],
-    ['keyT', 't', 'T', 'е', 'Е'],
-    ['keyY', 'y', 'Y', 'н', 'Н'],
-    ['keyU', 'u', 'U', 'г', 'Г'],
-    ['keyI', 'i', 'I', 'ш', 'Ш'],
-    ['keyO', 'o', 'O', 'щ', 'Щ'],
-    ['keyP', 'p', 'P', 'з', 'З'],
-    ['bracketLeft', '[', '{', 'х', 'Х'],
-    ['bracketRight', ']', '}', 'ъ', 'Ъ'],
-    ['delete', 'delete', 'delete', 'delete', 'delete']];
+    ['Tab', 'Tab', 'Tab', 'Tab', 'Tab'],
+    ['KeyQ', 'q', 'Q', 'й', 'Й'],
+    ['KeyW', 'w', 'W', 'ц', 'Ц'],
+    ['KeyE', 'e', 'E', 'у', 'У'],
+    ['KeyR', 'r', 'R', 'к', 'К'],
+    ['KeyT', 't', 'T', 'е', 'Е'],
+    ['KeyY', 'y', 'Y', 'н', 'Н'],
+    ['KeyU', 'u', 'U', 'г', 'Г'],
+    ['KeyI', 'i', 'I', 'ш', 'Ш'],
+    ['KeyO', 'o', 'O', 'щ', 'Щ'],
+    ['KeyP', 'p', 'P', 'з', 'З'],
+    ['BracketLeft', '[', '{', 'х', 'Х'],
+    ['BracketRight', ']', '}', 'ъ', 'Ъ'],
+    ['Delete', 'Delete', 'Delete', 'Delete', 'Delete']];
   const thirdRow = [
-    ['capslock', 'capslock', 'capslock', 'capslock', 'capslock'],
-    ['keyA', 'a', 'A', 'ф', 'Ф'],
-    ['keyS', 's', 'S', 'ы', 'Ы'],
-    ['keyD', 'd', 'D', 'в', 'В'],
-    ['keyF', 'f', 'F', 'а', 'А'],
-    ['keyG', 'g', 'G', 'п', 'П'],
-    ['keyH', 'h', 'H', 'р', 'Р'],
-    ['keyJ', 'j', 'J', 'о', 'О'],
-    ['keyK', 'k', 'K', 'л', 'Л'],
-    ['keyL', 'l', 'L', 'д', 'Д'],
-    ['semicolon', ';', ':', 'ж', 'Ж'],
-    ['quote', '\'', '"', 'э', 'Э'],
-    ['backslash', '\\', '|', '\\', '/'],
-    ['enter', 'enter', 'enter', 'enter', 'enter'],
+    ['CapsLock', 'CapsLock', 'CapsLock', 'CapsLock', 'CapsLock'],
+    ['KeyA', 'a', 'A', 'ф', 'Ф'],
+    ['KeyS', 's', 'S', 'ы', 'Ы'],
+    ['KeyD', 'd', 'D', 'в', 'В'],
+    ['KeyF', 'f', 'F', 'а', 'А'],
+    ['KeyG', 'g', 'G', 'п', 'П'],
+    ['KeyH', 'h', 'H', 'р', 'Р'],
+    ['KeyJ', 'j', 'J', 'о', 'О'],
+    ['KeyK', 'k', 'K', 'л', 'Л'],
+    ['KeyL', 'l', 'L', 'д', 'Д'],
+    ['Semicolon', ';', ':', 'ж', 'Ж'],
+    ['Quote', '\'', '"', 'э', 'Э'],
+    ['Backslash', '\\', '|', '\\', '/'],
+    ['Enter', 'Enter', 'Enter', 'Enter', 'Enter'],
   ];
   const fourthRow = [
-    ['shiftLeft', 'shift', 'shift', 'shift', 'shift'],
-    ['keyZ', 'z', 'Z', 'я', 'Я'],
-    ['keyX', 'x', 'X', 'ч', 'Ч'],
-    ['keyC', 'c', 'C', 'с', 'С'],
-    ['keyV', 'v', 'V', 'м', 'М'],
-    ['keyB', 'b', 'B', 'и', 'И'],
-    ['keyN', 'n', 'N', 'т', 'Т'],
-    ['keyM', 'm', 'M', 'ь', 'Ь'],
-    ['comma', ',', '<', 'б', 'Б'],
-    ['period', '.', '>', 'ю', 'Ю'],
-    ['slash', '/', '?', '.', ','],
-    ['arrowUp', '↑', '↑', '↑', '↑'],
-    ['shiftRight', 'shift', 'shift', 'shift', 'shift']];
+    ['ShiftLeft', 'Shift', 'Shift', 'Shift', 'Shift'],
+    ['KeyZ', 'z', 'Z', 'я', 'Я'],
+    ['KeyX', 'x', 'X', 'ч', 'Ч'],
+    ['KeyC', 'c', 'C', 'с', 'С'],
+    ['KeyV', 'v', 'V', 'м', 'М'],
+    ['KeyB', 'b', 'B', 'и', 'И'],
+    ['KeyN', 'n', 'N', 'т', 'Т'],
+    ['KeyM', 'm', 'M', 'ь', 'Ь'],
+    ['Comma', ',', '<', 'б', 'Б'],
+    ['Period', '.', '>', 'ю', 'Ю'],
+    ['Slash', '/', '?', '.', ','],
+    ['ArrowUp', '↑', '↑', '↑', '↑'],
+    ['ShiftRight', 'Shift', 'Shift', 'Shift', 'Shift']];
   const fifthRow = [
-    ['ctrlLeft', 'ctrl', 'ctrl', 'ctrl', 'ctrl'],
-    ['metaLeft', 'win', 'win', 'win', 'win'],
-    ['altLeft', 'alt', 'alt', 'alt', 'alt'],
-    ['space', ' ', ' ', ' ', ' '],
-    ['altRight', 'alt', 'alt', 'alt', 'alt'],
-    ['arrowLeft', '←', '←', '←', '←'],
-    ['arrowDown', '↓', '↓', '↓', '↓'],
-    ['arrowRight', '→', '→', '→', '→'],
-    ['ctrlRight', 'ctrl', 'ctrl', 'ctrl', 'ctrl']];
+    ['ControlLeft', 'Ctrl', 'Ctrl', 'Ctrl', 'Ctrl'],
+    ['MetaLeft', 'Win', 'Win', 'Win', 'Win'],
+    ['AltLeft', 'Alt', 'Alt', 'Alt', 'Alt'],
+    ['Space', ' ', ' ', ' ', ' '],
+    ['AltRight', 'Alt', 'Alt', 'Alt', 'Alt'],
+    ['ArrowLeft', '←', '←', '←', '←'],
+    ['ArrowDown', '↓', '↓', '↓', '↓'],
+    ['ArrowRight', '→', '→', '→', '→'],
+    ['ControlRight', 'Ctrl', 'Ctrl', 'Ctrl', 'Ctrl']];
   const row = [];
   for (let i = 0; i < 5; i += 1) {
     row[i] = document.createElement('div');
@@ -104,11 +104,11 @@ window.onload = () => {
   class Key {
     constructor(name, enSpan, enShiftSpan, ruSpan, ruShiftSpan, parent) {
       this.name = name;
+      this.parent = parent;
       this.enSpanValue = enSpan;
       this.enShiftSpanValue = enShiftSpan;
       this.ruSpanValue = ruSpan;
       this.ruShiftSpanValue = ruShiftSpan;
-      this.parent = parent;
       this.createKey = () => {
         this.div = document.createElement('div');
         this.div.className = 'key';
@@ -119,9 +119,7 @@ window.onload = () => {
         if (lang === 'en') {
           this.enSpan.className = 'show';
           this.curSpan = enSpan;
-        } else {
-          this.enSpan.className = 'hide';
-        }
+        } else { this.enSpan.className = 'hide'; }
         this.div.append(this.enSpan);
         this.enShiftSpan = document.createElement('span');
         this.enShiftSpan.innerHTML = this.enShiftSpanValue;
@@ -132,9 +130,7 @@ window.onload = () => {
         if (lang === 'ru') {
           this.ruSpan.className = 'show';
           this.curSpan = ruSpan;
-        } else {
-          this.ruSpan.className = 'hide';
-        }
+        } else { this.ruSpan.className = 'hide'; }
         this.div.append(this.ruSpan);
         this.ruShiftSpan = document.createElement('span');
         this.ruShiftSpan.innerHTML = this.ruShiftSpanValue;
@@ -142,8 +138,57 @@ window.onload = () => {
         this.div.append(this.ruShiftSpan);
         this.spans = this.div.children;
       };
+      this.switchLanguage = () => {
+        if (this.enSpan.className === 'show') {
+          this.enSpan.className = 'hide';
+          this.ruSpan.className = 'show';
+          this.curSpan = ruSpan;
+          localStorage.setItem('language', 'ru');
+          lang = 'ru';
+        } else if (this.ruSpan.className === 'show') {
+          this.ruSpan.className = 'hide';
+          this.enSpan.className = 'show';
+          this.curSpan = enSpan;
+          localStorage.setItem('language', 'en');
+          lang = 'en';
+        } else if (this.enShiftSpan.className === 'show') {
+          this.enShiftSpan.className = 'hide';
+          this.ruShiftSpan.className = 'show';
+          this.curSpan = ruShiftSpan;
+          localStorage.setItem('language', 'ru');
+          lang = 'ru';
+        } else if (this.ruShiftSpan.className === 'show') {
+          this.ruShiftSpan.className = 'hide';
+          this.enShiftSpan.className = 'show';
+          this.curSpan = enShiftSpan;
+          localStorage.setItem('language', 'en');
+          lang = 'en';
+        }
+      };
+      this.switchCase = () => {
+        if (lang === 'en') {
+          if (this.enSpan.className === 'show') {
+            this.enSpan.className = 'hide';
+            this.enShiftSpan.className = 'show';
+            this.curSpan = enShiftSpan;
+          } else {
+            this.enSpan.className = 'show';
+            this.curSpan = enSpan;
+            this.enShiftSpan.className = 'hide';
+          }
+        } else if (this.ruSpan.className === 'show') {
+          this.ruSpan.className = 'hide';
+          this.ruShiftSpan.className = 'show';
+          this.curSpan = ruShiftSpan;
+        } else {
+          this.ruSpan.className = 'show';
+          this.curSpan = ruSpan;
+          this.ruShiftSpan.className = 'hide';
+        }
+      };
     }
   }
+
   // Первый ряд
   for (let i = 0; i < firstRow.length; i += 1) {
     firstRowKeys[i] = new Key(
@@ -151,7 +196,7 @@ window.onload = () => {
       firstRow[i][1],
       firstRow[i][2],
       firstRow[i][3],
-      firstRow[i][3],
+      firstRow[i][4],
       row[0],
     );
     firstRowKeys[i].createKey();
@@ -221,4 +266,107 @@ window.onload = () => {
   fifthRowKeys[0].div.style.width = '65px';
   fifthRowKeys[3].div.style.width = '350px';
   fifthRowKeys[fifthRow.length - 1].div.style.width = '65px';
+
+  let allRowKeys = [];
+  allRowKeys = firstRowKeys.concat(secondRowKeys, thirdRowKeys, fourthRowKeys, fifthRowKeys);
+  // Обработка нажатий
+  let shiftDown = false;
+  let capsOn = false;
+  document.addEventListener('keydown', (e) => {
+    allRowKeys.forEach((x) => {
+      if (e.code === x.name) {
+        if (e.code === 'CapsLock') {
+          if (!capsOn) {
+            x.div.style.background = '#6e69b47c';
+            x.div.style.transform = 'scale(0.9)';
+            capsOn = true;
+            for (let i = 13; i < allRowKeys.length; i += 1) {
+              allRowKeys[i].switchCase();
+            }
+          } else if (capsOn) {
+            x.div.style.background = '#1100ff7c';
+            x.div.style.transform = 'scale(1)';
+            capsOn = false;
+            for (let i = 13; i < allRowKeys.length; i += 1) {
+              allRowKeys[i].switchCase();
+            }
+          }
+          return;
+        }
+        x.div.style.background = '#6e69b47c';
+        x.div.style.transform = 'scale(0.9)';
+        if ((e.altKey) && (e.shiftKey)) {
+          allRowKeys.forEach((y) => {
+            y.switchLanguage();
+          });
+        }
+        if (e.code === 'Tab') {
+          e.preventDefault();
+          input.value += '\t';
+        } else if (e.code === 'Enter') {
+          e.preventDefault();
+          input.value += '\n';
+        } else if ((e.code === 'ShiftLeft') || (e.code === 'ShiftRight')) {
+          if (!shiftDown) {
+            shiftDown = true;
+            allRowKeys.forEach((y) => {
+              y.switchCase();
+            });
+          }
+        } else if (e.code === 'Delete') {
+          e.preventDefault();
+          input.value = input.value.substring(1, input.value.length);
+        } else if (e.code === 'Backspace') {
+          e.preventDefault();
+          input.value = input.value.substring(0, input.value.length - 1);
+        } else if ((e.code === 'ControlLeft') || (e.code === 'ControlRight')) {
+          e.preventDefault();
+        } else if ((e.code === 'AltLeft') || (e.code === 'AltRight')) {
+          e.preventDefault();
+        } else if (e.target !== input) {
+          input.value += x.curSpan;
+        }
+      }
+    });
+  });
+  document.addEventListener('keyup', (e) => {
+    allRowKeys.forEach((x) => {
+      if (e.code === x.name) {
+        if (e.code !== 'CapsLock') {
+          x.div.style.background = '#1100ff7c';
+          x.div.style.transform = 'scale(1)';
+          if ((e.code === 'ShiftLeft') || (e.code === 'ShiftRight')) {
+            shiftDown = false;
+            allRowKeys.forEach((y) => {
+              y.switchCase();
+            });
+          }
+        }
+      }
+    });
+  });
+  // Подсветка кнопок при наведении
+  document.addEventListener('mouseover', (e) => {
+    if (e.target.className === 'key') {
+      e.target.style.background = '#6e69b47c';
+    }
+  });
+  document.addEventListener('mouseout', (e) => {
+    if (e.target.className === 'key') {
+      e.target.style.background = '#1100ff7c';
+    }
+  });
+  // Обработка мыши
+  let clickTarget = '';
+  document.addEventListener('mousedown', (e) => {
+    const event = new Event('keydown');
+    event.code = e.target.id;
+    clickTarget = e.target.id;
+    document.dispatchEvent(event);
+  });
+  document.addEventListener('mouseup', () => {
+    const event = new Event('keyup');
+    event.code = clickTarget;
+    document.dispatchEvent(event);
+  });
 };
